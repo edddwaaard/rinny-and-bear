@@ -657,3 +657,50 @@ footer{
   border-top:1px solid rgba(0,0,0,0.05);
   background-color:var(--white);
 }
+
+.back-to-top{
+  display:none;
+}
+
+@media (max-width:600px){
+  main{
+    padding:0 0.85rem;
+  }
+
+  .hero .cta-btn,
+  .faq-cta,
+  .collection-actions .cta-btn{
+    width:100%;
+    max-width:22rem;
+  }
+
+  .about-creator,
+  .order-guide,
+  .notice-card,
+  .collection-actions{
+    margin-bottom:3.5rem;
+  }
+
+  .gallery-item img{
+    aspect-ratio:4 / 3;
+    object-fit:contain;
+    background-color:var(--off-white);
+  }
+
+  .faq-list summary{
+    min-height:3.25rem;
+    display:flex;
+    align-items:center;
+    padding:0.85rem 1.1rem;
+    font-size:1rem;
+  }
+
+  .back-to-top{
+    display:inline-block;
+    margin-top:0.8rem;
+    color:var(--sage-green);
+    font-size:0.85rem;
+    font-weight:600;
+    text-decoration:none;
+  }
+}
