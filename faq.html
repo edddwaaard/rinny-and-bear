@@ -10,15 +10,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-P38FEZTL74"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-P38FEZTL74');
-</script>
 </head>
 
 <body id="top">
@@ -90,8 +81,20 @@
   Message us on Instagram
 </a>
 
+<section class="consent-banner" aria-label="Cookie preferences" hidden>
+  <div>
+    <strong>Help us understand our visitors</strong>
+    <p>We use optional Google Analytics to understand visits and improve this website. Read our <a href="privacy.html">privacy notice</a>.</p>
+  </div>
+  <div class="consent-actions">
+    <button class="consent-reject" type="button">Reject analytics</button>
+    <button class="consent-accept" type="button">Accept analytics</button>
+  </div>
+</section>
+
 <footer>
   <p>&copy; Rinny and Bear. All rights reserved. Handmade in Buckinghamshire, UK.</p>
+  <a href="privacy.html">Privacy notice</a>
   <a class="back-to-top" href="#top">Back to top</a>
 </footer>
 
@@ -121,6 +124,42 @@
       menuToggle.focus();
     }
   });
+
+  const consentBanner = document.querySelector('.consent-banner');
+  const consentAccept = document.querySelector('.consent-accept');
+  const consentReject = document.querySelector('.consent-reject');
+  const consentKey = 'rinnyBearAnalyticsConsent';
+
+  function loadAnalytics() {
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){window.dataLayer.push(arguments);};
+    window.gtag('js', new Date());
+    window.gtag('config', 'G-P38FEZTL74');
+
+    const analyticsScript = document.createElement('script');
+    analyticsScript.async = true;
+    analyticsScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-P38FEZTL74';
+    document.head.appendChild(analyticsScript);
+  }
+
+  function saveConsent(value) {
+    localStorage.setItem(consentKey, value);
+    consentBanner.hidden = true;
+  }
+
+  const savedConsent = localStorage.getItem(consentKey);
+  if (savedConsent === 'accepted') {
+    loadAnalytics();
+  } else if (!savedConsent) {
+    consentBanner.hidden = false;
+  }
+
+  consentAccept.addEventListener('click', () => {
+    saveConsent('accepted');
+    loadAnalytics();
+  });
+
+  consentReject.addEventListener('click', () => saveConsent('rejected'));
 </script>
 
 </body>
