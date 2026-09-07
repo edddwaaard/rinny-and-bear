@@ -416,6 +416,12 @@ main{
   font-size:0.82rem;
 }
 
+@media (max-width:600px){
+  .order-steps{
+    grid-template-columns:1fr;
+  }
+}
+
 .lightbox[hidden]{
   display:none;
 }
