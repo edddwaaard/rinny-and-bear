@@ -15,6 +15,7 @@
 <!-- NAVIGATION -->
 <nav class="top-nav" id="site-navigation">
   <button class="menu-close" type="button" aria-label="Close navigation menu">&times;</button>
+  <img class="menu-logo" src="img/CompLogo.png" alt="Rinny and Bear logo">
   <a href="#care-safety">Care & Safety</a>
   <a href="#collection">Our Collection</a>
   <a href="#about-creator">About the Creator</a>
@@ -24,7 +25,7 @@
 
 <!-- FULL-WIDTH STRIPED HEADER — LOGO ONLY -->
 <header>
-  <button class="menu-toggle" type="button" aria-controls="site-navigation" aria-expanded="false">
+  <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="site-navigation" aria-expanded="false">
     <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
     <span class="menu-label">Menu</span>
   </button>
@@ -46,7 +47,7 @@
 
   <!-- ABOUT THE CREATOR -->
   <section id="about-creator" class="about-creator">
-    <img src="https://via.placeholder.com/300x300/E8B4B8/FFFFFF?text=Creator+Portrait"
+    <img src="img/Creator.png"
           alt="Amy, creator of Rinny & Bear" class="creator-photo">
 
     <div class="creator-text">
@@ -101,7 +102,7 @@
   <section class="gallery">
     <div class="gallery-item">
       <button class="image-button" type="button" aria-label="Enlarge Handmade Woven Amy Bag Charm">
-        <img src="img/Amy.bmp" alt="Handmade woven Amy bag charm">
+        <img src="img/Amy.bmp" alt="Handmade woven Amy bag charm" loading="lazy" width="300" height="300">
       </button>
       <div class="gallery-caption">
         <strong>Handmade Woven "Amy" Bag Charm</strong>
@@ -111,7 +112,7 @@
 
     <div class="gallery-item">
       <button class="image-button" type="button" aria-label="Enlarge Leopard Print Charm">
-        <img src="img/Leopard.bmp" alt="Leopard Print Charm">
+        <img src="img/Leopard.bmp" alt="Leopard Print Charm" loading="lazy" width="300" height="300">
       </button>
       <div class="gallery-caption">
         <strong>Leopard Print Fabric Bag Accent</strong>
@@ -121,7 +122,7 @@
 
     <div class="gallery-item">
       <button class="image-button" type="button" aria-label="Enlarge Custom Name Charm">
-        <img src="img/Name.bmp" alt="Custom name charm">
+        <img src="img/Name.bmp" alt="Custom name charm" loading="lazy" width="300" height="300">
       </button>
       <div class="gallery-caption">
         <strong>Custom Name Charms</strong>
@@ -131,17 +132,17 @@
 
     <div class="gallery-item">
       <button class="image-button" type="button" aria-label="Enlarge Handmade Woven Parent Bag Charm">
-        <img src="img/MumDad.bmp" alt="Handmade woven Parent bag charms">
+        <img src="img/MumDad.bmp" alt="Handmade woven Parent bag charms" loading="lazy" width="300" height="300">
       </button>
       <div class="gallery-caption">
-        <strong>Handmade Woven Parent Bag Charms</strong>
+        <strong>Woven Parent Bag Charms</strong>
         <span>Personalised designs available</span>
       </div>
     </div>
 
         <div class="gallery-item">
       <button class="image-button" type="button" aria-label="Packaged with care">
-        <img src="img/Delivery.bmp" alt="Packaged with care">
+        <img src="img/Delivery.bmp" alt="Packaged with care" loading="lazy" width="300" height="300">
       </button>
       <div class="gallery-caption">
         <strong>Packaged with care</strong>
@@ -151,7 +152,7 @@
 
         <div class="gallery-item">
       <button class="image-button" type="button" aria-label="Colourful Beads">
-        <img src="img/Beads.bmp" alt="Colourful beads">
+        <img src="img/Beads.bmp" alt="Colourful beads" loading="lazy" width="300" height="300">
       </button>
       <div class="gallery-caption">
         <strong>Colourful Beads</strong>
@@ -166,6 +167,10 @@
   </div>
 
 </main>
+
+<a class="mobile-contact-bar" href="https://instagram.com/rinny_and_bear" target="_blank" rel="noopener noreferrer">
+  Message us on Instagram
+</a>
 
 <!-- IMAGE LIGHTBOX -->
 <div class="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged product image" hidden>
