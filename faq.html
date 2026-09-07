@@ -12,7 +12,8 @@
 
 <body>
 
-<nav class="top-nav">
+<nav class="top-nav" id="site-navigation">
+  <button class="menu-close" type="button" aria-label="Close navigation menu">&times;</button>
   <a href="index.html#care-safety">Care & Safety</a>
   <a href="index.html#collection">Our Collection</a>
   <a href="index.html#about-creator">About the Creator</a>
@@ -21,6 +22,10 @@
 </nav>
 
 <header>
+  <button class="menu-toggle" type="button" aria-controls="site-navigation" aria-expanded="false">
+    <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+    <span class="menu-label">Menu</span>
+  </button>
   <a class="logo-text" href="index.html">Rinny &amp; Bear</a>
 </header>
 
@@ -72,6 +77,34 @@
 <footer>
   <p>&copy; Rinny and Bear. All rights reserved. Handmade in Buckinghamshire, UK.</p>
 </footer>
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const menuClose = document.querySelector('.menu-close');
+  const navigation = document.querySelector('.top-nav');
+
+  function closeMenu() {
+    navigation.classList.remove('menu-open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('menu-open');
+  }
+
+  menuToggle.addEventListener('click', () => {
+    const isOpen = navigation.classList.toggle('menu-open');
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    document.body.classList.toggle('menu-open', isOpen);
+    if (isOpen) menuClose.focus();
+  });
+
+  menuClose.addEventListener('click', closeMenu);
+  navigation.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && navigation.classList.contains('menu-open')) {
+      closeMenu();
+      menuToggle.focus();
+    }
+  });
+</script>
 
 </body>
 </html>
