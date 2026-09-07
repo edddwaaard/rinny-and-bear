@@ -31,7 +31,8 @@ img{display:block;max-width:100%;height:auto;}
 
 .menu-toggle,
 .menu-close,
-.menu-logo{
+.menu-logo,
+.mobile-contact-bar{
   display:none;
 }
 
